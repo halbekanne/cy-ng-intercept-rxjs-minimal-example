@@ -9,8 +9,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   imports: [CommonModule, HttpClientModule],
   providers: [],
   template: `
-    Test
-    {{ text }}
+    <div class="container">
+        {{ text }}
+    </div>
   `,
   styles: [],
 })
@@ -23,10 +24,10 @@ export class AppComponent implements OnInit {
     interval(1000).pipe(
       startWith(-1),
       switchMap(() => {
-        return this.httpClient.get<string>('https://yesno.wtf/api');
+        return this.httpClient.get<any>('https://yesno.wtf/api');
       })
     ).subscribe((res) => {
-      this.text = res;
+      this.text = res.answer;
     });
   }
 

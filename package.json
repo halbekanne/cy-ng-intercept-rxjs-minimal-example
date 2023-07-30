@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "cypress:component": "cypress run --component --browser chrome",
+    "cypress:open": "cypress open --component --browser chrome",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
